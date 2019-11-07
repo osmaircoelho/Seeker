@@ -22,7 +22,10 @@ var settings = {};
                 'input_search': {
                     'id': 'input_search',
                     'class': 'form-control',
-                    'html': ''
+                    'html': '',
+                    'actions' : {
+                        'click' : function(){}
+                    }
                 },
 
                 'div_advanced_search': {
@@ -34,7 +37,10 @@ var settings = {};
                 'btn_advanced_search': {
                     'id': 'btn_advanced_search',
                     'class': 'btn btn-primary',
-                    'html': '<i class="fa fa-search" aria-hidden="true"></i>'
+                    'html': '<i class="fa fa-search" aria-hidden="true"></i>',
+                    'actions' : {
+                        'click' : function(){}
+                    }
                 },
 
                 'div_eraser': {
@@ -46,10 +52,16 @@ var settings = {};
                 'btn_eraser': {
                     'id': 'btn_eraser',
                     'class': 'btn btn-danger',
-                    'html': '<i class="fa fa-eraser" aria-hidden="true"></i>'
+                    'html': '<i class="fa fa-eraser" aria-hidden="true"></i>',
+                    'actions' : {
+                        'click' : function(){}
+                    }
+                },
+
+                'modal_advenced_search': {
+                    'id' : 'modal_advenced_search'
                 }
-            },
-            '': ''
+            }
 
         };
 
@@ -78,6 +90,8 @@ var settings = {};
                 modal_search
             );
 
+            current_element.append(div_seeker);
+
             addActions(
                 div_seeker,
                 div_search,
@@ -89,7 +103,6 @@ var settings = {};
                 modal_search
             );
 
-            current_element.append(div_seeker);
 
         });
 
@@ -170,7 +183,7 @@ function mountHTML(
 
     createID(
         modal_search,
-        'modal_advenced_search'
+        settings.element.modal_advenced_search.id
     );
 
     div_seeker
@@ -222,6 +235,13 @@ function addActions(
 )
 {
 
+    btn_advanced_search.click(() => {
+        modal_search.modal('show');
+    });    
+
+    btn_eraser.click(() => {
+        input_search.val('');
+    });    
 
 
 }
