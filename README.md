@@ -1,26 +1,21 @@
 # *Seeker*
 
-### **Sobre**
-This plugin to create a seeker for each object in your data base
-
-### **Ferramentas**
-Abaixo estão listadas as ferramentas utilizadas:
-
- - 
+### **Aboult**
+A simple plugin to simplify object search
 
 ### **Desenvolvedores**
 
  - Thiago Henrique Felix
 
-### **Status do Projeto**
+### **Project status**
 
- - Em desenvolvimento
+ - Under development
 
-### **Licença**
-Licenciado através da [MIT.](https://opensource.org/licenses/GPL-3.0)
+### **License**
+Licensed [MIT.](https://opensource.org/licenses/GPL-3.0)
 
-### **Imagens Seeker**
-
+### **Seeker images**
+[Seeker Image.](./project-img/seeker_img.png)
 
 ## Project setup
 ```
