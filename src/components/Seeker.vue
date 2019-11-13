@@ -1,6 +1,5 @@
 <template>
   <div id="seeker" class="col-auto form-inline">
-
     <input
       ref="input_code"
       type="text"
@@ -8,14 +7,19 @@
       aria-label=""
       style="max-width:150px"
       @keyup.enter="findCode"
-      :v-model="code"
+      :v-model="codeSearch"
       placeholder="Insert a code"
     />
-  <vue-bootstrap-typeahead
-      :data="itens"
-      :v-model="itemSearch"
+    <v-autocomplete
+      input-class="form-control m-1"
       placeholder="Insert an item"
-    />
+      :items="itens"
+      :get-label="getLabel"
+      :component-item="template"
+      @update-items="updateItems"
+       :min-len='0'
+    >
+    </v-autocomplete>
 
     <button ref="button_search" class="btn btn-primary m-1" type="button">
       <i class="fas fa-search"></i>
@@ -25,30 +29,41 @@
       <i class="fas fa-eraser"></i>
     </button>
 
+    <hr>
+
   </div>
 </template>
 
 <script>
+
+import tpl from './Tplitem.vue'
+
 export default {
+  name: 'seeker',
   data: () => {
     return {
-      code: '',
-      itens: [
-        'item',
-        'item2',
-        'item3',
-        'item4',
-        'item5'
-      ],
-      itemSearch: ''
+      codeSearch: '',
+      itens: [],
+      itemSearch: 'qwdqwd',
+      template: tpl
     }
   },
+  props: ['url_query_code', 'url_query_item'],
   methods: {
-    findCode: () => {
-    //   axios.get(`http://www.mocky.io/v2/5dcc4dd454000071ba9c2298?q=${this.itemSearch}`)
-    //     .then((res) => {
-    //       this.itens = res.data.items
-    //     })
+    findItem: function () {
+      window.axios
+        .get(`${this.url_query_item}?q=${this.itemSearch}`)
+        .then(res => {
+          this.itens = res.data
+        })
+    },
+    getLabel (item) {
+      return item.name
+    },
+    updateItems (text) {
+      window.axios.get(`${this.url_query_item}?q=${text}`).then(res => {
+        this.itens = res.data
+      })
     }
   }
 }
