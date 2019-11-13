@@ -15,7 +15,7 @@ A simple plugin to simplify object search
 Licensed [MIT.](https://opensource.org/licenses/GPL-3.0)
 
 ### **Seeker images**
-[Seeker Image.](./project-img/seeker_img.png)
+![Seeker Image.](./project-img/seeker_img.png)
 
 ## Project setup
 ```
