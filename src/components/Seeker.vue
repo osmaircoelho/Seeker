@@ -45,8 +45,10 @@ export default {
   },
   methods: {
     findCode: () => {
-      this.code_is_loading = true
-      alert('dqwdqwdqwdqwd')
+    //   axios.get(`http://www.mocky.io/v2/5dcc4dd454000071ba9c2298?q=${this.itemSearch}`)
+    //     .then((res) => {
+    //       this.itens = res.data.items
+    //     })
     }
   }
 }
