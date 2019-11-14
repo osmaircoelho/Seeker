@@ -16,6 +16,7 @@ Licensed [MIT.](https://opensource.org/licenses/GPL-3.0)
 
 ### **Seeker images**
 ![Seeker Image.](./project-img/seeker_img.png)
+![Seeker been used.](./project-img/seeker_been_userd.gif)
 
 ## Project setup
 ```
