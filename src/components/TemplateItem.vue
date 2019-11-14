@@ -1,6 +1,6 @@
 <template>
-    <div>
-        <b>#{{item.id}}</b>
+    <div class="rounded border p-2">
+        <b class="text-left">#{{item.id}}</b>
         <br>
         <b>{{ item.name }}</b>
         <p> {{item.description}}</p>
